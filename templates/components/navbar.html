@@ -1,0 +1,49 @@
+<!-- NAV -->
+<nav id="navbar">
+  <a href="{{ url_for('home') }}" class="logo">
+    <span class="logo-mark" aria-hidden="true">R</span>
+    <div class="logo-text">
+      <span class="logo-name">Raj Tours &amp; Travels</span>
+      <span class="logo-tagline-nav">Every Journey, A New Story</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li class="nav-dropdown">
+      <a href="{{ url_for('packages', category='domestic') }}">Packages <span class="dropdown-arrow">▼</span></a>
+      <div class="dropdown-menu">
+        <a href="{{ url_for('packages', category='domestic') }}">Domestic Packages</a>
+        <a href="{{ url_for('packages', category='international') }}">International Packages</a>
+      </div>
+    </li>
+    <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    <li><a href="https://wa.me/918450982772?text=Hi%20Raj%20Tours%20%26%20Travels!%20I%20would%20like%20to%20make%20a%20booking." class="nav-cta" target="_blank" rel="noopener">Book Now</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="openMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">✕</button>
+  <div class="mobile-menu-logo">
+    <span class="logo-mark mobile-logo-mark" aria-hidden="true">R</span>
+    <div>
+      <span class="mobile-logo-name">Raj Tours &amp; Travels</span>
+      <span class="mobile-logo-tagline">Every Journey, A New Story</span>
+    </div>
+  </div>
+  <a href="{{ url_for('home') }}" onclick="closeMenu()">Home</a>
+  <div class="mobile-dropdown">
+    <button type="button" class="mobile-dropdown-toggle" onclick="this.parentElement.classList.toggle('open')">Packages <span>▼</span></button>
+    <div class="mobile-submenu">
+      <a href="{{ url_for('packages', category='domestic') }}" onclick="closeMenu()">Domestic Packages</a>
+      <a href="{{ url_for('packages', category='international') }}" onclick="closeMenu()">International Packages</a>
+    </div>
+  </div>
+  <a href="{{ url_for('gallery') }}" onclick="closeMenu()">Gallery</a>
+  <a href="{{ url_for('contact') }}" onclick="closeMenu()">Contact</a>
+  <a href="https://wa.me/918450982772?text=Hi%20Raj%20Tours%20%26%20Travels!%20I%20would%20like%20to%20make%20a%20booking." class="mobile-cta" onclick="closeMenu()" target="_blank" rel="noopener">Book Now</a>
+</div>

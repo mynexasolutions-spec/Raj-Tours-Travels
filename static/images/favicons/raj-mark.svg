@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Raj Tours and Travels R mark">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#0369a1"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#g)"/>
+  <path d="M18 49V14h16.5C43 14 48 18.5 48 25.3c0 5.2-3 8.9-8 10.5L50 49H39.6l-8.4-11.9h-3.5V49H18Zm9.7-19h6c3 0 4.6-1.5 4.6-4.2 0-2.6-1.6-4-4.6-4h-6V30Z" fill="#fff"/>
+</svg>

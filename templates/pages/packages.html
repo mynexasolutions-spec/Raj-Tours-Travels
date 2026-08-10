@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- PACKAGES HERO -->
+<section class="hero packages-hero">
+  <div class="hero-slider">
+    <div class="hero-slide active">
+      <img src="https://images.pexels.com/photos/7764191/pexels-photo-7764191.jpeg" alt="Travel Journey"
+        loading="eager">
+    </div>
+    <div class="hero-slide">
+      <img src="https://images.pexels.com/photos/5374231/pexels-photo-5374231.jpeg" alt="Tour Destinations"
+        loading="eager">
+    </div>
+    <div class="hero-slide">
+      <img src="https://images.pexels.com/photos/32262460/pexels-photo-32262460.jpeg" alt="Curated Tour Package"
+        loading="eager">
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">✈️ Curated Journeys for Every Traveller</div>
+    <h1 class="hero-title">Tour <span>Packages</span></h1>
+    <p class="hero-hindi">देश-विदेश के यादगार सफर — राज टूर्स एंड ट्रैवल्स के साथ</p>
+    <p class="hero-sub">Explore handpicked domestic, international, and group-departure packages—all in one place.</p>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- PACKAGES GRID -->
+<section class="packages-section">
+  <div class="packages-intro">
+    <div class="centered packages-intro-copy">
+      <div class="section-label reveal">Find Your Escape</div>
+      <h2 class="section-title reveal reveal-delay-1">Browse Tour Packages — <span class="package-title-accent">Special Offers &amp; Best Deals</span></h2>
+      <p class="section-sub reveal reveal-delay-2">Choose a category, explore the latest packages, and book your preferred journey directly on WhatsApp.</p>
+    </div>
+
+    <nav class="package-filters reveal reveal-delay-2" aria-label="Filter tour packages">
+      <a href="{{ url_for('packages', category='domestic') }}" class="package-filter{% if active_category == 'domestic' %} active{% endif %}" data-package-filter="domestic" aria-current="{{ 'true' if active_category == 'domestic' else 'false' }}">
+        Domestic <span>{{ package_groups['domestic']|length }}</span>
+      </a>
+      <a href="{{ url_for('packages', category='international') }}" class="package-filter{% if active_category == 'international' %} active{% endif %}" data-package-filter="international" aria-current="{{ 'true' if active_category == 'international' else 'false' }}">
+        International <span>{{ package_groups['international']|length }}</span>
+      </a>
+      <a href="{{ url_for('packages', category='other') }}" class="package-filter{% if active_category == 'other' %} active{% endif %}" data-package-filter="other" aria-current="{{ 'true' if active_category == 'other' else 'false' }}">
+        Other <span>{{ package_groups['other']|length }}</span>
+      </a>
+    </nav>
+  </div>
+
+  {% for category_slug, packages in package_groups.items() %}
+  <div class="packages-grid package-group" data-package-group="{{ category_slug }}"{% if category_slug != active_category %} hidden{% endif %}>
+    {% for package in packages %}
+    <div class="pkg-card{% if loop.first %} featured{% endif %} reveal{{ loop.cycle('', ' reveal-delay-1', ' reveal-delay-2', ' reveal-delay-3') }}">
+      {% if package.badge %}
+      <div class="pkg-badge">{{ package.badge }}</div>
+      {% endif %}
+      <div class="pkg-img pkg-flyer">
+        <img src="{{ url_for('static', filename=package.image) }}" alt="{{ package.name }}" loading="lazy">
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-type">{{ package.type }}</div>
+        <div class="pkg-name">{{ package.name }}</div>
+        <div class="pkg-details">
+          {% for detail in package.details %}
+          <span class="pkg-detail">{{ detail }}</span>
+          {% endfor %}
+        </div>
+        <div class="pkg-price-row">
+          <div class="pkg-price">
+            <span class="price-new{% if package.contact_price %} price-contact{% endif %}">
+              {{ package.price }}{% if not package.contact_price %} <span class="price-pp">/pp</span>{% endif %}
+            </span>
+          </div>
+          {% set booking_message = 'Hi Raj Tours & Travels! I want to book the ' ~ package.name ~ '. Please share details.' %}
+          <a href="https://wa.me/918450982772?text={{ booking_message|urlencode }}" class="pkg-book" target="_blank" rel="noopener">Book Now</a>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="empty-packages reveal">
+      <p>No {{ category_slug }} packages are available right now. Please check back soon or contact us for customised options.</p>
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</section>
+
+<script>
+  (() => {
+    const validCategories = new Set(['domestic', 'international', 'other']);
+    const filterLinks = document.querySelectorAll('[data-package-filter]');
+    const packageGroups = document.querySelectorAll('[data-package-group]');
+
+    function showCategory(requestedCategory, updateUrl = true) {
+      const category = validCategories.has(requestedCategory) ? requestedCategory : 'domestic';
+
+      filterLinks.forEach((link) => {
+        const isActive = link.dataset.packageFilter === category;
+        link.classList.toggle('active', isActive);
+        link.setAttribute('aria-current', isActive ? 'true' : 'false');
+      });
+
+      packageGroups.forEach((group) => {
+        group.hidden = group.dataset.packageGroup !== category;
+      });
+
+      if (updateUrl) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('category', category);
+        window.history.replaceState({ category }, '', url);
+      }
+    }
+
+    filterLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        showCategory(link.dataset.packageFilter);
+      });
+    });
+
+    window.addEventListener('popstate', () => {
+      const category = new URL(window.location.href).searchParams.get('category') || 'domestic';
+      showCategory(category, false);
+    });
+  })();
+</script>
+
+<!-- END BANNER -->
+<div class="end-banner">
+  <img src="{{ url_for('static', filename='images/banner_end.png') }}" alt="Travel Banner">
+  <div class="end-banner-overlay">
+    <h2 class="end-banner-title">Ready for Your Next Great Adventure?</h2>
+    <a href="https://wa.me/918450982772?text=Hi%20Raj%20Tours%20%26%20Travels!%20I%20would%20like%20to%20plan%20a%20trip." class="end-banner-btn" target="_blank" rel="noopener">
+      <span>Connect on WhatsApp</span>
+    </a>
+  </div>
+</div>
+{% endblock %}

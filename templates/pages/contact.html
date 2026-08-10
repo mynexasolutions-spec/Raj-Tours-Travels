@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- CONTACT HERO -->
+<div class="hero contact-hero">
+  <div class="hero-slider">
+    <div class="hero-slide active">
+      <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1800" alt="Travel Contact">
+    </div>
+    <div class="hero-slide">
+      <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1800" alt="India Journey">
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">📞 Get In Touch</div>
+    <h1 class="hero-title">Let's Plan Your<br>Perfect <span>Trip</span></h1>
+    <p class="hero-hindi">आपका सफर, हमारी ज़िम्मेदारी</p>
+    <p class="hero-sub">Reach out to us for tour bookings, custom itineraries, or event planning. We're here to make your journey unforgettable.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/918450982772?text=Hi%20Raj%20Tours%20%26%20Travels!%20I%20want%20to%20plan%20a%20trip." class="btn-primary" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+      <a href="tel:+918450982772" class="btn-outline">📞 Call Now</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</div>
+
+<!-- GOOGLE MAP -->
+<section class="map-section">
+  <div class="centered">
+    <div class="section-label reveal">Find Us</div>
+    <h2 class="section-title reveal reveal-delay-1">Our Location</h2>
+  </div>
+  <div class="map-wrap reveal reveal-delay-2">
+    <iframe
+      src="https://www.google.com/maps?q=19.2659585%2C73.1707131&amp;z=17&amp;hl=en&amp;output=embed"
+      title="Raj Tours &amp; Travels location"
+      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<!-- CONTACT INFO + FORM -->
+<section id="contact" class="contact-section">
+  <div class="centered">
+    <div class="section-label reveal">Get In Touch</div>
+    <h2 class="section-title reveal reveal-delay-1">Plan Your Dream<br>Trip Today</h2>
+    <p class="section-sub reveal reveal-delay-2">Fill the form or call us directly — we'll craft the perfect tour just for you.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <div class="contact-card">
+        <div class="contact-icon">&#9742;</div>
+        <div>
+          <div class="contact-label">Call / WhatsApp</div>
+          <div class="contact-val"><a href="tel:+918450982772">8450982772</a></div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">&#9200;</div>
+        <div>
+          <div class="contact-label">Working Hours</div>
+          <div class="contact-val">Mon – Sat, 9 AM – 8 PM</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">&#9728;</div>
+        <div>
+          <div class="contact-label">We Cover</div>
+          <div class="contact-val">Kashmir · Ladakh · Goa · Kerala · Rajasthan · Himachal · Darjeeling & more</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">&#10022;</div>
+        <div>
+          <div class="contact-label">Our Address</div>
+          <div class="contact-val">Shop No. 05, First Floor, Vishnu Heights, Patil Nagar, near Ambivali Station West, Kalyan, Maharashtra.</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal reveal-delay-1">
+      <div class="form-title">Send Us a Message</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="contact-name" placeholder="e.g. Rahul Sharma">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="contact-phone" placeholder="+91 98765 43210">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Destination</label>
+        <select id="contact-dest">
+          <option>Select destination...</option>
+          <option>Kashmir</option>
+          <option>Ladakh</option>
+          <option>Shimla · Manali</option>
+          <option>Goa</option>
+          <option>Kerala</option>
+          <option>Darjeeling · Gangtok</option>
+          <option>Rajasthan</option>
+          <option>Mumbai</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Tour Type</label>
+          <select id="contact-type">
+            <option>Solo Tour</option>
+            <option>Family Tour</option>
+            <option>Couple Tour</option>
+            <option>Group Tour</option>
+            <option>Hajj & Umrah Tour</option>
+            <option>School & College Tour</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Adults</label>
+          <input type="number" id="contact-adults" placeholder="e.g. 2" min="1">
+        </div>
+        <div class="form-group">
+          <label>Children</label>
+          <select id="contact-child">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4+">4+</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Child Age Range</label>
+        <select id="contact-age">
+          <option value="N/A">N/A</option>
+          <option value="0-2 Years">0-2 Years</option>
+          <option value="2-5 Years">2-5 Years</option>
+          <option value="5-12 Years">5-12 Years</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message / Requirements</label>
+        <textarea id="contact-msg" placeholder="Tell us your travel dates, budget or any special requirements..."></textarea>
+      </div>
+      <button class="form-submit" onclick="handleSubmit()">Send Enquiry</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function handleSubmit() {
+    const name = document.getElementById('contact-name').value;
+    const phone = document.getElementById('contact-phone').value;
+    const dest = document.getElementById('contact-dest').value;
+    const type = document.getElementById('contact-type').value;
+    const adults = document.getElementById('contact-adults').value;
+    const child = document.getElementById('contact-child').value;
+    const age = document.getElementById('contact-age').value;
+    const msg = document.getElementById('contact-msg').value;
+
+    const message = `Hi Raj Tours & Travels! I want to enquire about a tour.\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Destination:* ${dest}\n*Tour Type:* ${type}\n*Adults:* ${adults}\n*Children:* ${child}\n*Child Age Range:* ${age}\n*Message:* ${msg}`;
+    window.open(`https://wa.me/918450982772?text=${encodeURIComponent(message)}`, '_blank');
+  }
+</script>
+
+{% endblock %}
