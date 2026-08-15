@@ -4,50 +4,50 @@ from flask import Flask, render_template, request, url_for
 app = Flask(__name__)
 
 PACKAGE_DETAILS = {
-    'domestic Tour Packages': {
-        'WhatsApp Image 2026-08-08 at 2.47.05 PM.jpeg': {
+    'domestic': {
+        'hyderabad.webp': {
             'badge': 'Group Departure',
             'type': 'Domestic Group Tour',
             'name': 'Hyderabad Tour Package',
             'details': ['5 Nights / 6 Days', 'Hotel · Food · Sightseeing · Train'],
             'price': '₹8,500',
         },
-        'WhatsApp Image 2026-08-08 at 2.47.06 PM.jpeg': {
+        'udaipur.webp': {
             'badge': 'Diwali Offer',
             'type': 'Domestic Group Tour',
             'name': 'Udaipur Tour Package',
             'details': ['4 Nights / 5 Days', 'Hotel · Food · Sightseeing · Train'],
             'price': '₹7,700',
         },
-        'WhatsApp Image 2026-08-08 at 2.47.07 PM (1).jpeg': {
+        'kashmir.webp': {
             'badge': 'Group Departure',
             'type': 'Snow Tour',
             'name': 'Kashmir Tour Package',
             'details': ['10 Nights / 11 Days', 'Deluxe & Luxury Options'],
             'price': 'From ₹16,800',
         },
-        'WhatsApp Image 2026-08-08 at 2.47.07 PM (2).jpeg': {
+        'goa.webp': {
             'badge': 'Group Departure',
             'type': 'Beach Tour',
             'name': 'Goa Tour Package',
             'details': ['4 Nights / 5 Days', 'Hotel · Food · Sightseeing · Train'],
             'price': '₹6,000',
         },
-        'WhatsApp Image 2026-08-08 at 2.47.07 PM.jpeg': {
+        'manali.webp': {
             'badge': 'Group Departure',
             'type': 'Hill Station Tour',
             'name': 'Manali Dalhousie Amritsar Tour',
             'details': ['8 Nights / 9 Days', 'Hotel · Food · Sightseeing · Train'],
             'price': '₹15,000',
         },
-        'WhatsApp Image 2026-08-08 at 2.47.08 PM (1).jpeg': {
+        'kerala.webp': {
             'badge': 'Diwali Vacation',
             'type': 'Backwater Tour',
             'name': 'Kerala Tour Package',
             'details': ['7 Nights / 8 Days', 'Hotel · Food · Sightseeing · Train'],
             'price': '₹16,000',
         },
-        'WhatsApp Image 2026-08-08 at 2.47.08 PM.jpeg': {
+        'shimla.webp': {
             'badge': 'Group Departure',
             'type': 'Hill Station Tour',
             'name': 'Shimla Manali Tour Package',
@@ -55,64 +55,64 @@ PACKAGE_DETAILS = {
             'price': '₹12,500',
         },
     },
-    'international Tour Packages': {
-        'WhatsApp Image 2026-08-08 at 2.47.11 PM (1).jpeg': {
+    'international': {
+        'russia.webp': {
             'badge': 'Group Departure',
             'type': 'International Group Tour',
             'name': 'Russia Tour Package',
             'details': ['Flights · Hotel · Sightseeing', 'Visa · Meals Included'],
             'price': '₹1,52,500',
         },
-        'WhatsApp Image 2026-08-08 at 2.47.11 PM.jpeg': {
+        'turkey.webp': {
             'badge': 'Group Departure',
             'type': 'International Group Tour',
             'name': 'Turkey Tour Package',
             'details': ['10 Nights / 11 Days', 'Flights · Visa · Food · Sightseeing'],
             'price': '₹1,90,000',
         },
-        'WhatsApp Image 2026-08-08 at 2.47.12 PM (1).jpeg': {
+        'bali.webp': {
             'badge': 'Island Escape',
             'type': 'Tropical Tour',
             'name': 'Bali Tour Package',
             'details': ['6 Nights / 7 Days', 'Hotel · Breakfast · Sightseeing'],
             'price': '₹66,500',
         },
-        'WhatsApp Image 2026-08-08 at 2.47.12 PM.jpeg': {
+        'dubai.webp': {
             'badge': 'City Escape',
             'type': 'International City Tour',
             'name': 'Dubai Tour Package',
             'details': ['4 Nights Accommodation', 'Tours · Transfers · Visa · Flights'],
             'price': '₹70,000',
         },
-        'WhatsApp Image 2026-08-08 at 2.47.13 PM.jpeg': {
+        'baku.webp': {
             'badge': 'City Escape',
             'type': 'International City Tour',
             'name': 'Baku Tour Package',
             'details': ['4 Nights Accommodation', 'Hotel · Breakfast · Visa · Flights'],
             'price': '₹68,000',
         },
-        'WhatsApp Image 2026-08-08 at 2.47.14 PM (1).jpeg': {
+        'uzbekistan.webp': {
             'badge': 'City Escape',
             'type': 'International City Tour',
             'name': 'Uzbekistan Tour Package',
             'details': ['4 Nights Accommodation', 'Hotel · Breakfast · Visa · Flights'],
             'price': '₹70,000',
         },
-        'WhatsApp Image 2026-08-08 at 2.48.39 PM (1).jpeg': {
+        'dubai-group-tour.webp': {
             'badge': 'Group Departure',
             'type': 'International City Tour',
             'name': 'Dubai Group Tour Package',
             'details': ['5 Nights / 6 Days', 'Hotel · Cruise · Desert Safari · Flights'],
             'price': '₹76,000',
         },
-        'WhatsApp Image 2026-08-08 at 2.48.40 PM (1).jpeg': {
+        'sri-lanka.webp': {
             'badge': 'Group Departure',
             'type': 'Island Tour',
             'name': 'Sri Lanka Tour Package',
             'details': ['6 Nights / 7 Days', 'Flights · Hotel · Sightseeing · Visa'],
             'price': '₹67,999',
         },
-        'WhatsApp Image 2026-08-08 at 2.48.41 PM.jpeg': {
+        'thailand.webp': {
             'badge': 'Group Departure',
             'type': 'International Tour',
             'name': 'Thailand Tour Package',
@@ -120,8 +120,8 @@ PACKAGE_DETAILS = {
             'price': '₹64,999',
         },
     },
-    'other Tour Packages': {
-        'group-departures-oct-2025-mar-2026.jpeg': {
+    'other': {
+        'group-departures.webp': {
             'badge': 'Group Departures',
             'type': 'Domestic & International',
             'name': 'Group Departures Oct 2025 – Mar 2026',
@@ -159,12 +159,14 @@ def gallery():
     print(f"Gallery Dir: {gallery_dir}, Total Images: {len(images)}")
     return render_template('pages/gallery.html', images=images)
 
-def get_package_cards(folder, category):
-    pkg_dir = os.path.join(app.static_folder, 'images', folder)
+def get_package_cards(folder, category, files=None):
+    pkg_dir = os.path.join(app.static_folder, 'images', folder) if folder else app.static_folder
     packages = []
-    package_details = PACKAGE_DETAILS.get(folder, {})
-    if os.path.exists(pkg_dir):
-        for file in sorted(os.listdir(pkg_dir)):
+    package_details = PACKAGE_DETAILS.get(folder or category.lower(), {})
+    if files is None and os.path.exists(pkg_dir):
+        files = os.listdir(pkg_dir)
+    if files is not None:
+        for file in sorted(files):
             if file.lower().endswith(('.png', '.jpg', '.jpeg', '.webp')):
                 details = package_details.get(file, {
                     'badge': 'Custom Package',
@@ -175,7 +177,7 @@ def get_package_cards(folder, category):
                 })
                 packages.append({
                     **details,
-                    'image': f'images/{folder}/{file}',
+                    'image': f'images/{folder}/{file}' if folder else f'images/{file}',
                     'contact_price': details['price'] == 'Contact for price',
                 })
     return packages
@@ -187,9 +189,9 @@ def packages():
         active_category = 'domestic'
 
     package_groups = {
-        'domestic': get_package_cards('domestic Tour Packages', 'Domestic'),
-        'international': get_package_cards('international Tour Packages', 'International'),
-        'other': get_package_cards('other Tour Packages', 'Other'),
+        'domestic': get_package_cards('domestic', 'Domestic'),
+        'international': get_package_cards('international', 'International'),
+        'other': get_package_cards(None, 'Other', ['group-departures.webp']),
     }
     return render_template(
         'pages/packages.html',
