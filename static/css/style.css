@@ -2037,6 +2037,14 @@ footer::before {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
+  .nav-links {
+    gap: 24px;
+  }
+
+  .nav-links a:not(.nav-cta) {
+    font-size: 0.8rem;
+  }
+
   .destinations-grid {
     grid-template-columns: repeat(2, 1fr);
   }
