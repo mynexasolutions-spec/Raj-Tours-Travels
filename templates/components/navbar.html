@@ -1,11 +1,19 @@
 <!-- NAV -->
 <nav id="navbar">
-  <a href="{{ url_for('home') }}" class="logo">
-    <span class="logo-mark" aria-hidden="true">R</span>
+<a href="{{ url_for('home') }}" class="logo">
+    {% if request.endpoint == 'events' %}
+    <img src="{{ url_for('static', filename='images/raj-enterprises-logo-removebg-preview.png') }}" alt="Raj Enterprises" class="logo-img">
+    <div class="logo-text">
+      <span class="logo-name">Raj Enterprises</span>
+      <span class="logo-tagline-nav">Homes Built for Everyday Living</span>
+    </div>
+    {% else %}
+    <img src="{{ url_for('static', filename='images/raj-travels.png') }}" alt="Raj Tours &amp; Travels" class="logo-img">
     <div class="logo-text">
       <span class="logo-name">Raj Tours &amp; Travels</span>
       <span class="logo-tagline-nav">Every Journey, A New Story</span>
     </div>
+    {% endif %}
   </a>
   <ul class="nav-links">
     <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -17,7 +25,7 @@
       </div>
     </li>
     <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
-    <li><a href="{{ url_for('events') }}">Events</a></li>
+    <li><a href="{{ url_for('events') }}">Properties</a></li>
     <li><a href="{{ url_for('contact') }}">Contact</a></li>
     <li><a href="https://wa.me/918450982772?text=Hi%20Raj%20Tours%20%26%20Travels!%20I%20would%20like%20to%20make%20a%20booking." class="nav-cta" target="_blank" rel="noopener">Book Now</a></li>
   </ul>
@@ -29,12 +37,20 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" onclick="closeMenu()">✕</button>
-  <div class="mobile-menu-logo">
-    <span class="logo-mark mobile-logo-mark" aria-hidden="true">R</span>
+<div class="mobile-menu-logo">
+    {% if request.endpoint == 'events' %}
+    <img src="{{ url_for('static', filename='images/raj-enterprises-logo-removebg-preview.png') }}" alt="Raj Enterprises" class="logo-img" style="height:40px;">
+    <div>
+      <span class="mobile-logo-name">Raj Enterprises</span>
+      <span class="mobile-logo-tagline">Homes Built for Everyday Living</span>
+    </div>
+    {% else %}
+    <img src="{{ url_for('static', filename='images/raj-travels.png') }}" alt="Raj Tours &amp; Travels" class="logo-img" style="height:40px;">
     <div>
       <span class="mobile-logo-name">Raj Tours &amp; Travels</span>
       <span class="mobile-logo-tagline">Every Journey, A New Story</span>
     </div>
+    {% endif %}
   </div>
   <a href="{{ url_for('home') }}" onclick="closeMenu()">Home</a>
   <div class="mobile-dropdown">
@@ -45,7 +61,7 @@
     </div>
   </div>
   <a href="{{ url_for('gallery') }}" onclick="closeMenu()">Gallery</a>
-  <a href="{{ url_for('events') }}" onclick="closeMenu()">Events</a>
+  <a href="{{ url_for('events') }}" onclick="closeMenu()">Properties</a>
   <a href="{{ url_for('contact') }}" onclick="closeMenu()">Contact</a>
   <a href="https://wa.me/918450982772?text=Hi%20Raj%20Tours%20%26%20Travels!%20I%20would%20like%20to%20make%20a%20booking." class="mobile-cta" onclick="closeMenu()" target="_blank" rel="noopener">Book Now</a>
 </div>

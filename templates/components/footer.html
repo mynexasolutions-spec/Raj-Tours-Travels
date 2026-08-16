@@ -2,9 +2,14 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="logo-text" style="margin-bottom:14px;">
-        <span class="logo-name" style="font-family:'Playfair Display',serif;font-size:1.6rem;color:#fff;">Raj Tours &amp; Travels</span>
-        <span class="logo-tagline-nav" style="color:var(--gold-light);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;margin-top:4px;display:block;">हर सफर एक नई कहानी</span>
+<div class="logo-text" style="margin-bottom:14px;">
+        {% if request.endpoint == 'events' %}
+        <img src="{{ url_for('static', filename='images/raj-enterprises-logo-removebg-preview.png') }}" alt="Raj Enterprises" class="logo-img" style="height:120px;margin-bottom:12px;">
+        <span class="logo-tagline-nav" style="color:var(--text-mid);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;margin-top:4px;display:block;">Homes Built for Everyday Living</span>
+        {% else %}
+        <img src="{{ url_for('static', filename='images/raj-travels.png') }}" alt="Raj Tours &amp; Travels" class="logo-img" style="height:120px;margin-bottom:12px;">
+        <span class="logo-tagline-nav" style="color:var(--text-mid);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;margin-top:4px;display:block;">हर सफर एक नई कहानी</span>
+        {% endif %}
       </div>
       <p class="footer-desc">A complete Indian destination tour planner. We craft unforgettable journeys across India's most beautiful landscapes — from Himalayan peaks to coastal shores.</p>
       <div class="footer-socials">

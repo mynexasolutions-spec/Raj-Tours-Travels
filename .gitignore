@@ -16,3 +16,5 @@ flask_output*.log
 # Environment / secrets
 .env
 *.pem
+
+docs
