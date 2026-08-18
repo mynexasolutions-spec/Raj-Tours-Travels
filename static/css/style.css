@@ -1579,9 +1579,36 @@ section {
 }
 
 .contact-phone-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px 16px;
+  align-items: start;
+}
+
+.contact-phone-person {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px 14px;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.contact-phone-person span,
+.footer-phone-person span {
+  color: var(--text-dark);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.contact-phone-person a {
+  color: var(--text-dark);
+  text-decoration: none;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.contact-phone-person a:hover {
+  color: var(--aqua);
 }
 
 .contact-form {
@@ -1693,7 +1720,7 @@ footer::before {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1.35fr 1fr 1fr;
   gap: 40px;
   margin-bottom: 50px;
 }
@@ -1767,6 +1794,54 @@ footer::before {
 .footer-links a:hover {
   color: var(--aqua);
   padding-left: 4px;
+}
+
+.footer-destination-groups {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 34px;
+  align-items: start;
+  justify-content: center;
+}
+
+.footer-destination-groups .footer-links a {
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.footer-destination-title {
+  text-align: center;
+}
+
+.footer-link-group {
+  color: var(--text-dark);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+.footer-link-group:first-child {
+  margin-top: 0;
+}
+
+.footer-contact-list {
+  gap: 14px;
+}
+
+.footer-phone-person {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.footer-phone-person span {
+  font-size: 0.7rem;
+}
+
+.footer-phone-person a {
+  line-height: 1.35;
 }
 
 .footer-bottom {
@@ -2146,6 +2221,21 @@ footer::before {
 }
 
 @media (max-width: 480px) {
+
+  .footer-destination-groups {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    justify-content: stretch;
+  }
+
+  .contact-phone-list {
+    column-gap: 8px;
+  }
+
+  .contact-phone-person a {
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
 
   .book-btn {
     font-size: 16px;

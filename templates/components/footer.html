@@ -20,8 +20,10 @@
       </div>
     </div>
     <div>
-      <div class="footer-col-title">Destinations</div>
+      <div class="footer-col-title footer-destination-title">Destinations</div>
+      <div class="footer-destination-groups">
       <ul class="footer-links">
+        <li class="footer-link-group">Domestic</li>
         <li><a href="{{ url_for('home') }}#packages">Kashmir</a></li>
         <li><a href="{{ url_for('home') }}#packages">Ladakh</a></li>
         <li><a href="{{ url_for('home') }}#packages">Shimla · Manali</a></li>
@@ -30,6 +32,19 @@
         <li><a href="{{ url_for('home') }}#packages">Darjeeling</a></li>
         <li><a href="{{ url_for('home') }}#packages">Rajasthan</a></li>
       </ul>
+      <ul class="footer-links">
+        <li class="footer-link-group">International</li>
+        <li><a href="{{ url_for('packages', category='international') }}">Russia</a></li>
+        <li><a href="{{ url_for('packages', category='international') }}">Turkey</a></li>
+        <li><a href="{{ url_for('packages', category='international') }}">Bali</a></li>
+        <li><a href="{{ url_for('packages', category='international') }}">Dubai</a></li>
+        <li><a href="{{ url_for('packages', category='international') }}">Baku</a></li>
+        <li><a href="{{ url_for('packages', category='international') }}">Uzbekistan</a></li>
+        <li><a href="{{ url_for('packages', category='international') }}">Dubai Group Tour</a></li>
+        <li><a href="{{ url_for('packages', category='international') }}">Sri Lanka</a></li>
+        <li><a href="{{ url_for('packages', category='international') }}">Thailand</a></li>
+      </ul>
+      </div>
     </div>
     <div>
       <div class="footer-col-title">Services</div>
@@ -45,13 +60,22 @@
     </div>
     <div>
       <div class="footer-col-title">Contact</div>
-      <ul class="footer-links">
-        <li><a href="tel:+918450982772">8450982772</a></li>
-        <li><a href="tel:+917208652193">7208652193</a></li>
-        <li><a href="tel:+918693824086">8693824086</a></li>
-        <li><a href="tel:+918450982086">8450982086</a></li>
-        <li><a href="tel:+918689824086">8689824086</a></li>
-        <li><a href="tel:+918425941950">8425941950</a></li>
+      <ul class="footer-links footer-contact-list">
+        <li class="footer-phone-person">
+          <span>Tushar</span>
+          <a href="tel:+917208652193">7208652193</a>
+          <a href="tel:+918693824086">8693824086</a>
+        </li>
+        <li class="footer-phone-person">
+          <span>Lav</span>
+          <a href="tel:+918450982086">8450982086</a>
+          <a href="tel:+918689824086">8689824086</a>
+        </li>
+        <li class="footer-phone-person">
+          <span>Raj</span>
+          <a href="tel:+918450982772">8450982772</a>
+          <a href="tel:+918425941950">8425941950</a>
+        </li>
         <li><a href="https://wa.me/918450982772?text=Hi%20Raj%20Tours%20%26%20Travels!" target="_blank" rel="noopener">WhatsApp Us</a></li>
         <li><a href="mailto:rajtoursandtravels009@gmail.com">rajtoursandtravels009@gmail.com</a></li>
         <li class="footer-address">Shop No. 05, First Floor, Vishnu Heights, Patil Nagar, near Ambivali Station West, Kalyan, Maharashtra.</li>
