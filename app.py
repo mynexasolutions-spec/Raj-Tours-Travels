@@ -120,13 +120,62 @@ PACKAGE_DETAILS = {
             'price': '₹64,999',
         },
     },
-    'other': {
+    'others': {
         'group-departures.webp': {
             'badge': 'Group Departures',
             'type': 'Domestic & International',
             'name': 'Group Departures Oct 2026 – Mar 2027',
             'details': ['8 Destinations', 'Dubai · Kashmir · Shimla · More'],
             'price': 'From ₹6,000',
+        },
+        'kashmir.webp': {
+            'badge': 'Group Departure',
+            'type': 'Snow Tour',
+            'name': 'Kashmir Deluxe Package',
+            'details': ['7 & 21 Nov | 5, 19 & 26 Dec', 'Hotel · Food · Sightseeing'],
+            'price': '₹16,600',
+        },
+        'kashmir2.webp': {
+            'badge': 'Group Departure',
+            'type': 'Snow Tour',
+            'name': 'Kashmir Luxury Package',
+            'details': ['9 & 23 Jan', 'Hotel · Food · Sightseeing'],
+            'price': '₹18,600',
+        },
+        'kerala.webp': {
+            'badge': 'Group Departure',
+            'type': 'Backwater Tour',
+            'name': 'Kerala Package',
+            'details': ['5 & 15 November', 'Hotel · Food · Sightseeing'],
+            'price': '₹17,500',
+        },
+        'ooty.webp': {
+            'badge': 'Group Departure',
+            'type': 'Hill Station Tour',
+            'name': 'Ooty Mysore Package',
+            'details': ['14 November', 'Hotel · Food · Sightseeing'],
+            'price': '₹15,000',
+        },
+        'hyderabad.webp': {
+            'badge': 'Group Departure',
+            'type': 'City Tour',
+            'name': 'Hyderabad Package',
+            'details': ['6 & 13 November | 22 Jan', 'Hotel · Food · Sightseeing'],
+            'price': '₹8,700',
+        },
+        'shimla manali.webp': {
+            'badge': 'Group Departure',
+            'type': 'Hill Station Tour',
+            'name': 'Shimla Manali Package',
+            'details': ['Nov: 13 & 27 | Dec: 11 & 25', 'Jan: 1, 15 & 28 | March: 13'],
+            'price': '₹12,500',
+        },
+        'goa.webp': {
+            'badge': 'Group Departure',
+            'type': 'Beach Tour',
+            'name': 'Goa Package',
+            'details': ['16 November', 'Hotel · Food · Sightseeing'],
+            'price': '₹6,400',
         },
     },
 }
@@ -191,7 +240,7 @@ def packages():
     package_groups = {
         'domestic': get_package_cards('domestic', 'Domestic'),
         'international': get_package_cards('international', 'International'),
-        'other': get_package_cards(None, 'Other', ['group-departures.webp']),
+        'other': get_package_cards('others', 'Other'),
     }
     return render_template(
         'pages/packages.html',
