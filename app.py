@@ -163,7 +163,7 @@ PACKAGE_DETAILS = {
             'details': ['6 & 13 November | 22 Jan', 'Hotel · Food · Sightseeing'],
             'price': '₹8,700',
         },
-        'shimla manali.webp': {
+        'shimla-manali.webp': {
             'badge': 'Group Departure',
             'type': 'Hill Station Tour',
             'name': 'Shimla Manali Package',
